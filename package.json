@@ -6,12 +6,11 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": ">=0",
-    "socket.io": ">=0",
-    "mongoskin": ">=0",
-    "connect-mongo": ">=0",
-    "cookie": ">=0",
-    "connect" : ">=0"
-    
+    "express": "3.0.0rc5",
+    "socket.io": "0.9.10",
+    "mongoskin": "0.4.4",
+    "connect-mongo": "0.2.0",
+    "cookie": "0.0.4",
+    "connect" : "2.6.0"
   }
 }
