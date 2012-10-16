@@ -121,8 +121,14 @@ textarea {
 #email-div {
     margin-bottom: 15px;
 }
+#user_container{
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+}
 #canvas_container{
     text-align: center;
+    display: inline;
 }
 #canvas_container.kineticjs-content {
     text-align: center;

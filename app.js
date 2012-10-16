@@ -78,11 +78,14 @@ io.set('authorization', function (data, accept) {
   }
 });
 
+var clients = {};
+
 io.sockets.on('connection', function (socket) {
   var sid = socket.handshake.sessionID;
   console.log('A socket with sessionID ' + sid + ' connected!');
   store.get(sid, function(error, session) {
-      socket.broadcast.emit('message', {type: 'broadcast', email: session.email});
+    socket.broadcast.emit('joined', {email: session.email});
+    clients[session.email] = socket;
   });
   
   socket.on('message', function() { 
@@ -90,8 +93,13 @@ io.sockets.on('connection', function (socket) {
       store.get(sid, function(error, session) {
         console.log(session);
       });
-      
-      
+  });
+  
+  socket.on('challenge', function(data) { 
+      console.log(data.to);
+      store.get(sid, function(error, session) {
+        clients[data.to].emit('challenge', {from: session.email});
+      });
   });
   socket.on('disconnect', function () { console.log('disconnected'); });
 });

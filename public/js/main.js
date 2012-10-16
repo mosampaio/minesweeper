@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   $.ajax({
     url: '/users/connected/',
     async: true,
@@ -12,6 +12,7 @@ $(document).ready(function() {
   
   $('#challenge').click(function() {
     var selectedUser = $('#users option:selected').get(0).value;
+    
     alert(selectedUser);
   });
-});
+});*/

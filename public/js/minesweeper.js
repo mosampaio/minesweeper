@@ -1,4 +1,4 @@
-$(document).ready(function() {
+var fnCreateCanvas = function() {
     var stage = new Kinetic.Stage({
         container: "canvas_container",
         width: 512,
@@ -42,7 +42,7 @@ $(document).ready(function() {
     }
     // add the layer to the stage
     stage.add(layer);
-});
+}
 function ev_canvas (ev) {
     if (ev.layerX || ev.layerX == 0) { // Firefox
         ev._x = ev.layerX;
